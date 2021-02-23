@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Provides a REST interface to expose all board info.
  *
- * Based on https://pi4j.com/1.2/example/system-info.html
+ * Based on https://pi4j.com/1.3/example/system-info.html
  */
 @RestController
 @RequestMapping("info")

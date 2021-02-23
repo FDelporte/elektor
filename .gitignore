@@ -2,3 +2,7 @@
 target/
 *.iml
 .DS_Store
+2106/.classpath
+2106/.project
+2106/.settings/
+2106/.vscode/
