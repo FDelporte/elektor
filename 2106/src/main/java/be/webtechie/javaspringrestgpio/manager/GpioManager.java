@@ -37,7 +37,13 @@ public class GpioManager {
      * Constructor which initializes the Pi4J {@link GpioController}.
      */
     public GpioManager() {
-        this.gpio = GpioFactory.getInstance();
+        String osName = SystemInfo.getOsName();
+        if (osName.toLowerCase().contains("raspberry") || osName.toLowerCase().contains("linux")) {
+            this.gpio = GpioFactory.getInstance();
+        } else {
+            logger.error("GPIO could not be initialized. Not running on Raspberry Pi but '{}'", osName);
+            this.gpio = null;
+        }
     }
 
     /**

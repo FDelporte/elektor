@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Provides a REST interface with the pins.
+ * Provides a REST interface to interact with the GPIOs.
  */
 @RestController
 @RequestMapping("gpio")
@@ -24,8 +24,16 @@ public class GpioRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(GpioRestController.class);
 
+    /**
+     * Reference to the GPIO manager service
+     */
     private final GpioManager gpioManager;
 
+    /**
+     * Constructor used by Spring to "inject" the GPIO manager into this class.
+     *
+     * @param gpioManager {@link GpioManager}
+     */
     public GpioRestController(GpioManager gpioManager) {
         this.gpioManager = gpioManager;
     }
